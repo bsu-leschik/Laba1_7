@@ -17,7 +17,10 @@ int main() {
 
     cout << "Write x, k" << endl;
     cin >> x >> k;
-    if (x > 1 || x < -1) { return 1; }
+    if (x >= 1 || x <= -1) {
+        cout << "x and k which you entered cannot be used. Use values only from (-1;1)" << endl;
+        return 1;
+    }
 
     double i = 2;
     limit = pow(10, -k);
@@ -37,8 +40,8 @@ int main() {
 
     ideal_result = 1/pow((1+x),3);
 
-    cout << "Result calculated with help of Taylor series: " << fixed << setprecision(k) <<  result << endl;
-    cout << "Result calculated with simple formula: " << fixed << setprecision(k) << ideal_result << endl;
+    cout << "Result calculated with help of Taylor series: " /*<< fixed */<< setprecision(k) <<  result << endl;
+    cout << "Result calculated with simple formula: " /*<< fixed */<< setprecision(k) << ideal_result << endl;
     cout << "Difference: " << fixed << setprecision(k) << result - ideal_result << endl;
     return 0;
 }
