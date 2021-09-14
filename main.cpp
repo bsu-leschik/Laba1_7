@@ -7,7 +7,7 @@ using namespace std;
 
 int main() {
 
-    int k, c;
+    int k;
     double x;
     double result = 1;
     double temp_result, ideal_result;
@@ -15,12 +15,12 @@ int main() {
     bool plus = false;
 
 
-    cout << "Write x, k and amount of numbers after comma(only in this order)" << endl;
-    cin >> x >> k >> c;
+    cout << "Write x, k" << endl;
+    cin >> x >> k;
     if (x > 1 || x < -1) { return 1; }
 
     double i = 2;
-    limit = pow(k, -10);
+    limit = pow(10, -k);
 
     do {
         temp_result = (i * (i + 1) * pow(x, i - 1)) / 2;
@@ -37,8 +37,8 @@ int main() {
 
     ideal_result = 1/pow((1+x),3);
 
-    cout << "Result calculated with help of Taylor series: " << fixed << setprecision(c) <<  result << endl;
-    cout << "Result calculated with simple formula: " << fixed << setprecision(c) << ideal_result << endl;
-    cout << "Difference: " << fixed << setprecision(c) << result - ideal_result << endl;
+    cout << "Result calculated with help of Taylor series: " << fixed << setprecision(k) <<  result << endl;
+    cout << "Result calculated with simple formula: " << fixed << setprecision(k) << ideal_result << endl;
+    cout << "Difference: " << fixed << setprecision(k) << result - ideal_result << endl;
     return 0;
 }
